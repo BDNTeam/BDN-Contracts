@@ -19,10 +19,13 @@ var contractAddress = '0x7fCFe62A3Ff36ede44ACaBcA2F6CF9e6c0223D0c'
 var address = '0x82dFE5f3d93306b5eA21b76231f426D045Dff66e';
 var key = '20ef1ed5db9ba301dfddf373208f9b457f06bf7613c0760176650e820462ecfc';
 
+var arguments = process.argv.splice(2);
+var path = arguments[0];
+
 abi = JSON.parse('[ { "constant": true, "inputs": [ { "name": "_dataId", "type": "uint256" } ], "name": "getData", "outputs": [ { "name": "", "type": "uint256", "value": "0" }, { "name": "", "type": "uint256", "value": "0" }, { "name": "", "type": "address", "value": "0x0000000000000000000000000000000000000000" }, { "name": "", "type": "string", "value": "" }, { "name": "", "type": "string", "value": "" }, { "name": "", "type": "uint256", "value": "0" }, { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "dataIndex", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_uuid", "type": "uint256" }, { "name": "_ueid", "type": "address" }, { "name": "_dataType", "type": "string" }, { "name": "_filePath", "type": "string" }, { "name": "_totalCount", "type": "uint256" }, { "name": "_createTime", "type": "uint256" } ], "name": "addDataToStore", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" } ]')
 web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/"));
 
-fs.readFile("data.txt", function (err, data) {
+fs.readFile(path, function (err, data) {
     if (err) throw err;
     bufferData = data
 });
