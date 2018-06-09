@@ -5,7 +5,7 @@ contract ERC20Interface {
     string public constant name = "BDN Token";
     string public constant symbol = "BDN";
     uint8 public constant decimals = 8;  // 8 is the most common number of decimal places
-    // 0.0000000000000000001  个代币
+    // 0.00000001  个代币
 
     function totalSupply() public constant returns (uint);
 
